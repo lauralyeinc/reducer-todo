@@ -4,14 +4,14 @@ import { reducer, todo } from "../reducers/reducer";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
-const TodoList = props => {
+const TodoList = () => {
     const [state, dispatch] = useReducer(reducer, todo);
 
     return (
         <div>
             <TodoForm dispatch={dispatch} />
             {state.map(todo => {
-                return <Todo key={todo.id} tod={todo} dispatch={dispatch} />;
+                return <Todo key={todo.id} todo={todo} dispatch={dispatch} />;
             })}
         </div>
     )

@@ -1,6 +1,5 @@
-import React, { useState, useReducer } from "react";
-import { reducer, todo } from "../reducers/reducer";
-import TodoList from "./TodoList";
+import React, { useState } from "react";
+
 
 const TodoForm = ({ dispatch }) => {
     const [item, setItem] = useState("");
@@ -21,7 +20,8 @@ const TodoForm = ({ dispatch }) => {
     const clearCompleted = event => {
         event.preventDefault();
         dispatch ({
-            type: "CLEAR_COMPLETED"
+            type: "CLEAR_COMPLETED",
+            payload: setItem
         });
     };
     
